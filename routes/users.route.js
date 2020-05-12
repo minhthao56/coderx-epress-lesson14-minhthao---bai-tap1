@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var db = require('../db');
 var shortid = require('shortid');
-var controller = require("../controllers/contronller.user")
+var controller = require("../controllers/contronller.user");
+var validation = require("../validation/validation.user")
 
 
 
@@ -14,7 +15,7 @@ router.get ('/find' ,controller.find);
 router.get('/detail/:id', controller.detail);
 // Add user
 router.get('/add', controller.getAdd)
-router.post('/add',controller.postAdd);
+router.post('/add',validation.postAdd, controller.postAdd);
 
 //Delete user
 router.get("/delete", controller.dislaydetele);

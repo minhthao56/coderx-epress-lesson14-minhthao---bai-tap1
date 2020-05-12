@@ -13,8 +13,8 @@ module.exports.postAdd = function(req, res, next){
         res.render('users/add',{
             err: err
         })
-    }
-    next();
+    } else {next()}
+    
 };
 module.exports.countcookie = function(req, res, next){
     var cookie = 0;
