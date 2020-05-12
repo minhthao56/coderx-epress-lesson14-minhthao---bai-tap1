@@ -1,0 +1,12 @@
+extends ../layout.pug
+block content
+    h1 Add your title and description in box (^^)
+    if err
+      .alert.alert-danger=err
+
+    form#form(action='/users/add', method='POST')
+      lable Name
+      br
+      input#input(type='text', name='name').form-control
+      br
+      button#bts.btn.btn-primary Add
